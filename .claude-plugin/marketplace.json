@@ -1,0 +1,19 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "fractal",
+  "description": "Cognitive Fractal — project navigation and semantic memory for coding agents.",
+  "owner": {
+    "name": "xss"
+  },
+  "plugins": [
+    {
+      "name": "fractal",
+      "source": "./",
+      "description": "Cognitive Fractal — project navigation + semantic memory for coding agents. Code facts retrieved live via ripgrep (never stale); project semantics persisted in .nav/ and auto-injected on file edits. No indexes, just memory.",
+      "author": {
+        "name": "xss"
+      },
+      "category": "productivity"
+    }
+  ]
+}

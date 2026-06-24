@@ -1,0 +1,17 @@
+Fractal — Cognitive Fractal
+===========================
+
+This is an original implementation. It does not bundle or redistribute
+any third-party source code.
+
+Runtime dependencies (system tools, not distributed with this plugin):
+  - node (>= 18)
+  - ripgrep (optional; falls back to system grep when absent)
+
+History
+-------
+Early versions (v2) used tree-sitter + sqlite-wasm to build a code graph
+and borrowed language extractors from CodeGraph (MIT). That approach was
+abandoned — the current version uses "live agent retrieval (ripgrep) +
+semantic memory (.nav/)". No third-party borrowed code remains.
+The v2 implementation is preserved in git history for reference.

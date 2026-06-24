@@ -1,0 +1,8 @@
+{
+  "name": "fractal",
+  "description": "Cognitive Fractal — project navigation + semantic memory for coding agents. Code facts retrieved live via ripgrep (never stale); project semantics persisted in .nav/ and auto-injected on file edits. No indexes, just memory.",
+  "version": "0.1.3",
+  "author": {
+    "name": "xss"
+  }
+}

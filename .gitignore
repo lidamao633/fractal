@@ -1,0 +1,21 @@
+# OS / editors
+.DS_Store
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Internal development (not for public repo)
+packaging/
+plans/
+tests/
+docs/
+scripts/release.sh
+scripts/release.mjs
+hooks/hooks.codex.json
+dist/
+
+# Note: this plugin has zero runtime dependencies — no node_modules or build artifacts.
+# .nav/.cache/ and .nav/*.index.json in user projects are handled by nav init
+# writing to each project's own .gitignore.

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Cognitive Fractal — nav CLI entry point.
+# When the plugin is enabled, bin/ is added to PATH, so `nav <cmd>` works anywhere.
+exec node "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/nav.mjs" "$@"
