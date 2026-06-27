@@ -6,15 +6,13 @@
 # Logs
 *.log
 
-# Internal development (not for public repo)
-packaging/
+# Internal notes — not for public repo
 plans/
-tests/
 docs/
-scripts/release.sh
-scripts/release.mjs
-hooks/hooks.codex.json
 dist/
+
+# Release/build tooling IS tracked (reproducible releases) — do NOT re-ignore:
+#   scripts/release.mjs, packaging/, tests/, hooks/hooks.codex.json
 
 # Note: this plugin has zero runtime dependencies — no node_modules or build artifacts.
 # .nav/.cache/ and .nav/*.index.json in user projects are handled by nav init

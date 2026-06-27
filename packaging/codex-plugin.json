@@ -1,0 +1,34 @@
+{
+  "name": "fractal",
+  "version": "0.0.0+managed-by-release",
+  "description": "Cognitive Fractal gives Codex agents project navigation and semantic memory through .nav/ notes, live ripgrep lookups, and the nav CLI.",
+  "author": {
+    "name": "xss"
+  },
+  "license": "Proprietary",
+  "keywords": [
+    "fractal",
+    "navigation",
+    "semantic-memory",
+    "agent-context",
+    "nav"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Fractal",
+    "shortDescription": "Project navigation and semantic memory for Codex",
+    "longDescription": "Fractal helps Codex work in existing projects by storing stable semantic context in .nav/, retrieving live code facts with ripgrep, and using nav commands for project scope, references, briefs, captures, and verification.",
+    "developerName": "xss",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "接入 Fractal 项目导航",
+      "用 nav scope 先看影响面",
+      "检查这个项目的 .nav 记忆"
+    ],
+    "brandColor": "#2563EB"
+  }
+}
