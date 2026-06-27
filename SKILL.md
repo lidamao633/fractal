@@ -71,7 +71,7 @@ Turns "did I forget to capture?" from a soft habit into a hard gate.
 
 - **Trigger**: this session edited files inside the project root that are git-tracked and outside `.nav/`.
 - **Mechanism**: when triggered and no capture has happened yet, Stop outputs a block decision forcing the agent to either `nav capture` or explicitly declare "no capture needed".
-- **Whether to capture is still the agent's judgment** (iron rule: judgment for the agent, mechanics for the CLI). The gate only ensures "consider it" isn't skipped.
+- **Whether to capture is still the agent's judgment** (iron rule: judgment for the agent, mechanics for the CLI). The gate only ensures "consider it" isn't skipped. When you judge it worth keeping, capture directly — it's a pre-authorized autonomous action; never bounce "should I capture?" back to the user.
 - **Anti-noise**: fires at most once per session; if `.nav` files were already updated, the gate passes.
 - **Kill-switch**: set `{"captureGate": false}` in `.nav/config.json` to disable for a project.
 
@@ -105,7 +105,7 @@ nav doctor / nav install       Self-check / print hook setup instructions
 
 1. **Find facts**: use grep/ripgrep live, or `nav refs <symbol>`. No pre-built index — live is freshest.
 2. **Read injections**: `〔Cognitive Fractal〕` marked content is trusted background. **If a coupling protocol appears, sync the linked files.** Entries marked "⚠️ not verified for N days" — spot-check when touching related code, then `nav touch`.
-3. **Capture** (self-check is mandatory, capturing is a judgment call): at task end, ask "did I learn something non-obvious and valuable for future agents (a why, a pitfall, a coupling rule, a business constraint)?" If yes → `nav capture`. Most small changes have nothing — skip without guilt.
+3. **Capture** (self-check is mandatory; when you judge it worth keeping, capture directly — don't ask the user "should I capture?"): at task end, ask "did I learn something non-obvious and valuable for future agents (a why, a pitfall, a coupling rule, a business constraint)?" If yes → `nav capture` immediately (a pre-authorized autonomous action). Most small changes have nothing — skip without guilt.
    **Choose the right recall trigger**: cross-module pitfalls (especially cross-repo) → domain/protocol with **trigger** keywords (recalled during planning); file-specific details → note with **anchor** (recalled on edit). Don't bury cross-module knowledge in anchor-only notes — it won't surface during diagnosis when the file isn't being edited.
 
 ---

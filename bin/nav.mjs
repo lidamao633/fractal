@@ -892,9 +892,9 @@ function cmdHook(args) {
         const parts = ['〔Cognitive Fractal · 收尾健康检查（每会话一次硬门禁）〕', '本会话改动了以下项目文件：', list, ''];
         if (needCapture) {
           parts.push(
-            '① 沉淀自检：本次是否产生了 grep 找不回、会话结束即丢失的「为什么 / 坑 / 联动 / 业务约定」？',
-            `   · 有 → node ${navBin} capture --kind=note|protocol|domain --title="…" --anchor="…" --body="…"`,
-            '   · 确无（纯改名/格式/琐碎修复）→ 回复「本次无需沉淀」。', '');
+            '① 沉淀：本次若产生了 grep 找不回、会话结束即丢失的「为什么 / 坑 / 联动 / 业务约定」，你判断到就直接 capture 落盘——这是已授权的自主动作，不要回头问用户「要不要沉淀」：',
+            `   · 值得沉淀 → 直接执行 node ${navBin} capture --kind=note|protocol|domain --title="…" --anchor="…" --body="…"（protocol/domain 必带 --trigger 中英文口语词，否则口语反查不到）`,
+            '   · 确无（纯改名/格式/琐碎修复）→ 一句话声明「本次无需沉淀」即可。', '');
         }
         if (touched.length) {
           parts.push(
@@ -906,7 +906,7 @@ function cmdHook(args) {
             '③ ❌ 以下 nav 条目的 anchor 已失效（指向文件不存在），结束前必须清理——改对路径 / `nav touch` / 删条目：',
             ...badAnchors.slice(0, 8).map((s) => `   · [${s.source}] ${s.title} → ${s.missing.join('、')}`), '');
         }
-        parts.push('以上由你（agent）判断处理；本门禁每会话只拦一次，处理完或显式声明后即可结束。');
+        parts.push('上述事项请就地处理——该沉淀的直接 capture、该订正的就地改、该清的清掉，无需就「要不要做」反问用户；本门禁每会话只拦一次，处理完或显式声明后即可结束。');
         process.stdout.write(JSON.stringify({ decision: 'block', reason: parts.join('\n') }));
         return 0;
       }
